@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/feed_navigation"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:icon="@drawable/home"/>
+    <item
+        android:id="@+id/map_navigation"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:icon="@drawable/map"/>
+    <item
+        android:id="@+id/muckpot_navigation"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:icon="@drawable/muckpot"/>
+    <item
+        android:id="@+id/search_navigation"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:icon="@drawable/search"/>
+</menu>
