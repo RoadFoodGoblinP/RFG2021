@@ -16,6 +16,13 @@ allprojects {
     repositories {
         google()
         jcenter()
+
+        // 네이버 지도 저장소
+        maven {url 'https://navercorp.bintray.com/maps'}
+
+        // 카카오 SDK 리포지트리 설정
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
+        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/'}
     }
 }
 
