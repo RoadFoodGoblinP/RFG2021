@@ -44,14 +44,17 @@ dependencies {
     implementation "com.kakao.sdk:v2-user:2.0.2" // 카카오 로그인, 사용자 관리
     implementation "com.kakao.sdk:v2-talk:2.0.2" // 친구, 메시지(카카오톡)
 
+    // 네이버 지도 SDK
+    implementation 'com.naver.maps:map-sdk:3.10.0'
+
     /*  안쓰는거 확인되면 삭제하기
     // 카카오 로그인
     implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
+    */
 
     //Glide(URL로 이미지 불러오기)
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-     */
 
     //ted permission
     implementation "gun0912.ted:tedpermission:2.1.0"

@@ -7,16 +7,25 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.example.rfg2021.ui.gallery.GalleryFragment;
+import com.example.rfg2021.ui.home.HomeFragment;
+import com.example.rfg2021.ui.slideshow.SlideshowFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -25,6 +34,13 @@ import androidx.navigation.ui.NavigationUI;
 import java.security.MessageDigest;
 
 public class MainActivity extends AppCompatActivity {
+    private BottomNavigationView bottomNavigationView;
+    private FragmentManager fm;
+    private FragmentTransaction ft;
+    private Feed feed_activity;
+    private Map map_activity;
+    private Muckpot muckpot_activity;
+    private Search search_activity;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -58,7 +74,62 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.feed_navigation:
+                        setFrag(0);
+                        break;
+                    case R.id.map_navigation:
+                        setFrag(1);
+                        break;
+                    case R.id.muckpot_navigation:
+                        setFrag(2);
+                        break;
+                    case R.id.search_navigation:
+                        setFrag(3);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        feed_activity = new Feed();
+        map_activity = new Map();
+        muckpot_activity = new Muckpot();
+        search_activity = new Search();
+        setFrag(0);
     }
+
+    private void setFrag(int n) {
+        fm = getSupportFragmentManager();
+        ft = fm.beginTransaction();
+        switch (n) {
+            case 0:
+                ft.replace(R.id.nav_host_fragment, feed_activity);
+                ft.commit();
+                break;
+            case 1:
+                ft.replace(R.id.nav_host_fragment, map_activity);
+                ft.commit();
+                break;
+            case 2:
+                ft.replace(R.id.nav_host_fragment, muckpot_activity);
+                ft.commit();
+                break;
+            case 3:
+                ft.replace(R.id.nav_host_fragment, search_activity);
+                ft.commit();
+                break;
+        }
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
