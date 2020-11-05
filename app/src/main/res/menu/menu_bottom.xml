@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="홈"
+        android:id="@+id/feed_navigation"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:title="지도"
+        android:id="@+id/map_navigation"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:icon="@drawable/ic_map"/>
+    <item
+        android:title="먹팟"
+        android:id="@+id/muckpot_navigation"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:icon="@drawable/ic_muckpot"/>
+    <item
+        android:title="검색"
+        android:id="@+id/search_navigation"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:icon="@drawable/ic_search"/>
+</menu>

@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.dd.tyt.MainActivity">
+
+    <item
+        android:id="@+id/ic_sort"
+        android:title="정렬"
+        android:icon="@drawable/ic_sort"
+        app:showAsAction="ifRoom"/>
+
+</menu>

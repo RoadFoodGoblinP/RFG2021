@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_checked="true"
+        android:color="#F78025"/>        <!-- 메뉴 선택시 색상 -->
+    <item android:color="#282828"/>         <!-- 메뉴 아이템 기본 색상 -->
+</selector>

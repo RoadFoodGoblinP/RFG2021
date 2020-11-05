@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.dd.tyt.MainActivity">
+
+    <item
+        android:id="@+id/ic_search"
+        android:title="검색"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="ifRoom"/>
+
+</menu>
