@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rfg2021" >
+    package="com.example.rfg2021">
 
     <!-- 지도에서 GPS를 통해 현재 위치를 찾아오기 위해 설정 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -15,34 +15,26 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RFG2021" >
-
+        android:theme="@style/Theme.RFG2021">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.RFG2021.NoActionBar" >
-        <activity android:name=".Index" />
-        <activity android:name=".Search" />
-        <activity android:name=".Muckpot" />
-        <activity android:name=".Map" />
-        <activity android:name=".Feed" />
-        <activity android:name=".FeedWrite" />
-        <activity android:name=".FeedDetail" />
-        <activity android:name=".UserProfile" />
-        <activity android:name=".UserJoin" />
-        <activity android:name=".MuckpotDetail" />
-
+            android:theme="@style/Theme.RFG2021.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity
+        android:name=".Index"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait" >
+    </activity>
 
         <!-- 네이버 API 사용을 위한 클라이언트 ID -->
         <meta-data
