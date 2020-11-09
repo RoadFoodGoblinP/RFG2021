@@ -57,7 +57,7 @@ public class Map extends Fragment implements OnMapReadyCallback {
         mapFragment.getMapAsync(this);
 
         // 위치를 반환하는 구현체인 FusedLocationSource 생성
-        //mLocationSource = new FusedLocationSource(this, PERMISSION_REQUEST_CODE);
+        mLocationSource = new FusedLocationSource(this, PERMISSION_REQUEST_CODE);
 
         return view;
     }

@@ -139,7 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="#f78025"
         android:src="@drawable/write"

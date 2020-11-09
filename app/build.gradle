@@ -46,6 +46,9 @@ dependencies {
 
     // 네이버 지도 SDK
     implementation 'com.naver.maps:map-sdk:3.10.0'
+    
+    // 네이버 지도 현재 위치 확인
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
 
     /*  안쓰는거 확인되면 삭제하기
     // 카카오 로그인
