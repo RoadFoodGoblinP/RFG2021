@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
 //        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
+        // 드로어메뉴 관련 기능
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setDrawerLayout(drawer)
@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         map_activity = new Map();
         muckpot_activity = new Muckpot();
         search_activity = new Search();
-        setFrag(0);
+        setFrag(4);
     }
 
     private void setFrag(int n) {
@@ -109,26 +110,47 @@ public class MainActivity extends AppCompatActivity {
         ft = fm.beginTransaction();
         switch (n) {
             case 0:
-                ft.replace(R.id.nav_host_fragment, feed_activity);
+                ft.show(feed_activity);
+                ft.hide(map_activity);
+                ft.hide(muckpot_activity);
+                ft.hide(search_activity);
                 ft.commit();
                 break;
             case 1:
-                ft.replace(R.id.nav_host_fragment, map_activity);
+                ft.show(map_activity);
+                ft.hide(feed_activity);
+                ft.hide(muckpot_activity);
+                ft.hide(search_activity);
                 ft.commit();
                 break;
             case 2:
-                ft.replace(R.id.nav_host_fragment, muckpot_activity);
+                ft.show(muckpot_activity);
+                ft.hide(map_activity);
+                ft.hide(feed_activity);
+                ft.hide(search_activity);
                 ft.commit();
                 break;
             case 3:
-                ft.replace(R.id.nav_host_fragment, search_activity);
+                ft.show(search_activity);
+                ft.hide(muckpot_activity);
+                ft.hide(map_activity);
+                ft.hide(feed_activity);
+                ft.commit();
+                break;
+            case 4:
+                ft.add(R.id.nav_host_fragment, feed_activity);
+                ft.add(R.id.nav_host_fragment, map_activity);
+                ft.add(R.id.nav_host_fragment, muckpot_activity);
+                ft.add(R.id.nav_host_fragment, search_activity);
+                ft.hide(muckpot_activity);
+                ft.hide(map_activity);
+                ft.hide(search_activity);
                 ft.commit();
                 break;
         }
     }
 
-
-
+    // 드로어 메뉴 함수 1
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -136,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    // 드로어 메뉴 함수 2
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
