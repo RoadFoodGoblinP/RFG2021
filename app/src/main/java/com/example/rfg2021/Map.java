@@ -81,10 +81,10 @@ public class Map extends Fragment implements OnMapReadyCallback {
         // 현재 위치로 화면이 따라오게 만듦
         naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
 
-        // 툴바 텍스트뷰에 현재 주소 찍기
+        /*// 툴바 텍스트뷰에 현재 주소 찍기
         toolbarText = view.findViewById(R.id.toolbar);
 //        toolbarText.setText(mNaverMap.getLocationSource().toString());        // 여기까지 툴바 텍스트뷰에 주소 찍기
-        toolbarText.setText("서울특별시 마포구 연남동");
+        toolbarText.setText("서울특별시 마포구 연남동");*/
 
         // 권한확인. 결과는 onRequestPermissionsResult 콜백 매서드 호출
         ActivityCompat.requestPermissions(this.getActivity(), PERMISSIONS, PERMISSION_REQUEST_CODE);
