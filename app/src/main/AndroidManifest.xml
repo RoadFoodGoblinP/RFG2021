@@ -29,6 +29,8 @@
         <activity android:name=".MuckpotDetail" />
         <activity android:name=".UserProfile" />
         <activity android:name=".UserJoin" />
+        <activity android:name=".FragmentSearchHotfeed" />
+        <activity android:name=".FragmentSearchHotmuck" />
 
         <activity
             android:name=".MainActivity"

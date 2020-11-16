@@ -155,6 +155,8 @@ public class Index extends AppCompatActivity {
                             // 프로필 획득 불가
                         }
                     }
+
+                    // 로그인 후 페이지 넘어가기
                 }
             });
         }
