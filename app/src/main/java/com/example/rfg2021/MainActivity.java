@@ -10,7 +10,6 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,22 +17,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
-import com.example.rfg2021.ui.gallery.GalleryFragment;
-import com.example.rfg2021.ui.home.HomeFragment;
-import com.example.rfg2021.ui.slideshow.SlideshowFragment;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.navigation.NavigationView;
-
-import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 import java.security.MessageDigest;
 
@@ -83,15 +75,13 @@ public class MainActivity extends AppCompatActivity {
                 int id = menuItem.getItemId();
                 String title = menuItem.getTitle().toString();
 
-                if(id == R.id.nav_home){
+                if (id == R.id.nav_home) {
                     Intent intent = new Intent(MainActivity.this, Setting.class);
                     startActivity(intent);
                     Toast.makeText(context, title + ": 계정 정보를 확인합니다.", Toast.LENGTH_SHORT).show();
-                }
-                else if(id == R.id.nav_gallery){
+                } else if (id == R.id.nav_gallery) {
                     Toast.makeText(context, title + ": 설정 정보를 확인합니다.", Toast.LENGTH_SHORT).show();
-                }
-                else if(id == R.id.nav_slideshow){
+                } else if (id == R.id.nav_slideshow) {
                     Toast.makeText(context, title + ": 로그아웃 시도중", Toast.LENGTH_SHORT).show();
                 }
 
@@ -176,8 +166,8 @@ public class MainActivity extends AppCompatActivity {
     // 드로어메뉴 페이지이동
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case android.R.id.home:{ // 왼쪽 상단 버튼 눌렀을 때
+        switch (item.getItemId()) {
+            case android.R.id.home: { // 왼쪽 상단 버튼 눌렀을 때
                 drawer.openDrawer(GravityCompat.START);
                 return true;
             }
@@ -212,8 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 String something = new String(Base64.encode(md.digest(), 0));
                 Log.d("key-hash", "key: " + something);
             }
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             // TODO Auto-generated catch block Log.e("name not found", e.toString());}
         }
     }

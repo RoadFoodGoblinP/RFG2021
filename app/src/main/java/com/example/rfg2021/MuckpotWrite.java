@@ -1,10 +1,10 @@
 package com.example.rfg2021;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MuckpotWrite extends AppCompatActivity {
     private ImageView muckWrite_CloseBtn;

@@ -1,8 +1,6 @@
 package com.example.rfg2021;
 
 import android.Manifest;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;

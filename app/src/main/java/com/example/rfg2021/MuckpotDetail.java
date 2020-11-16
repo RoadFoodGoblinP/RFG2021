@@ -1,13 +1,13 @@
 package com.example.rfg2021;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MuckpotDetail extends AppCompatActivity {
     private ImageView muckDetail_BackBtn, muck_profile, muck_Commentprofilepic;
