@@ -1,5 +1,6 @@
 package com.example.rfg2021;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -27,11 +28,12 @@ public class Index extends AppCompatActivity {
 
     Button Login_home, btn_logout;
     private SessionCallback sessionCallback = new SessionCallback();
+    private Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_index);
 
         Login_home = findViewById(R.id.Login_home);
         btn_logout = findViewById(R.id.btn_logout);
@@ -39,7 +41,7 @@ public class Index extends AppCompatActivity {
         Login_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), Feed.class);
+                Intent intent = new Intent(getApplication(), MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -50,8 +52,7 @@ public class Index extends AppCompatActivity {
                 UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
                     @Override
                     public void onCompleteLogout() {
-                        Toast myToast = Toast.makeText(Index.this, "로그아웃 되었습니다.", Toast.LENGTH_LONG);
-                        myToast.show();
+                        Toast.makeText(context, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
