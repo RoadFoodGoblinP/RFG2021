@@ -43,7 +43,7 @@
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
                 <ImageView
-                    android:src="@drawable/setting"
+                    android:src="@drawable/ic_setting"
                     android:layout_width="30dp"
                     android:layout_height="25dp"/>
 
@@ -150,7 +150,7 @@
                                 <ImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
-                                    android:src="@drawable/location" />
+                                    android:src="@drawable/ic_location" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -210,7 +210,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <ImageView
-                                android:src="@drawable/replies"
+                                android:src="@drawable/ic_replies"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"/>
                             <TextView
@@ -227,7 +227,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <ImageView
-                                android:src="@drawable/likes"
+                                android:src="@drawable/ic_likes"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"/>
                             <TextView
@@ -244,7 +244,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <ImageView
-                                android:src="@drawable/pictures"
+                                android:src="@drawable/ic_pictures"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"/>
                             <TextView
@@ -279,7 +279,7 @@
         android:layout_marginBottom="20dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="#f78025"
-        android:src="@drawable/write_feed"
+        android:src="@drawable/ic_write_feed"
         app:borderWidth="0dp"
         app:fabSize="normal"/>
 

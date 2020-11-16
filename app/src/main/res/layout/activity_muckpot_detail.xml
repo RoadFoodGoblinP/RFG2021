@@ -42,11 +42,6 @@
                     android:layout_height="wrap_content"/>
             </LinearLayout>
 
-            <ImageView
-                android:src="@drawable/alert"
-                android:layout_width="30dp"
-                android:layout_height="25dp"/>
-
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -118,7 +113,7 @@
                             <ImageView
                                 android:layout_width="15dp"
                                 android:layout_height="15dp"
-                                android:src="@drawable/location" />
+                                android:src="@drawable/ic_location" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -184,7 +179,7 @@
                     <ImageView
                         android:layout_marginLeft="15dp"
                         android:layout_gravity="bottom"
-                        android:src="@drawable/number_people"
+                        android:src="@drawable/ic_number_people"
                         android:layout_width="20dp"
                         android:layout_height="20dp"/>
 

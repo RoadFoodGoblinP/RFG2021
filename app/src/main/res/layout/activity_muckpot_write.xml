@@ -21,7 +21,7 @@
             android:orientation="horizontal">
             <ImageView
                 android:id="@+id/muckWrite_CloseBtn"
-                android:src="@drawable/close"
+                android:src="@drawable/ic_close"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
             <LinearLayout
