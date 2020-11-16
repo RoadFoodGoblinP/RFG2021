@@ -47,7 +47,6 @@ public class Muckpot extends Fragment {
         //muck_profilePic.setBackground(new ShapeDrawable(new OvalShape()));
         //muck_profilePic.setClipToOutline(true);
 
-/*
         // 하나의 먹팟 화면으로 이동 (Muckpot_Detail)
         muck_list.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +64,6 @@ public class Muckpot extends Fragment {
                 startActivity(intent);
             }
         });
-        */
 
         return view;
     }

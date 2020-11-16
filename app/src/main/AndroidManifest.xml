@@ -9,17 +9,26 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RFG2021">
+        android:theme="@style/Theme.RFG2021"
+        android:usesCleartextTraffic="true">
+
         <activity android:name=".Setting" />
         <activity android:name=".Search" />
         <activity android:name=".Muckpot" />
         <activity android:name=".Map" />
         <activity android:name=".Feed" />
+        <activity android:name=".FeedDetail" />
+        <activity android:name=".FeedWrit" />
+        <activity android:name=".MuckpotWrite" />
+        <activity android:name=".MuckpotDetail" />
+        <activity android:name=".UserProfile" />
+        <activity android:name=".UserJoin" />
 
         <activity
             android:name=".MainActivity"
@@ -31,13 +40,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".Index"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity> <!-- 네이버 API 사용을 위한 클라이언트 ID -->
+            android:screenOrientation="portrait"/>
+
+        <!-- 네이버 API 사용을 위한 클라이언트 ID -->
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
-            android:value="yqhn1cw8e9" /> <!-- 카카오 API 사용을 위한 네이티브 앱 키 -->
+            android:value="yqhn1cw8e9" />
+
+        <!-- 카카오 API 사용을 위한 네이티브 앱 키 -->
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="7bf3e2aa9b3bc947b214a31ab6c25d2a" />

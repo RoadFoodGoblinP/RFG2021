@@ -58,15 +58,14 @@ public class Feed extends Fragment {
             }
         });
 
-/*
-        // 회원 프로필 화면으로 이동 (UserProfile)
+/*        // 회원 프로필 화면으로 이동 (UserProfile)
         feed_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), UserProfile.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         feed_AllFeed = view.findViewById(R.id.feed_AllFeed);
         feed_WriteBtn = view.findViewById(R.id.feed_WriteBtn);
@@ -88,7 +87,6 @@ public class Feed extends Fragment {
                 startActivity(intent);
             }
         });
-        */
 
         return view;
     }
