@@ -100,7 +100,7 @@
                             <ImageView
                                 android:layout_width="15dp"
                                 android:layout_height="15dp"
-                                android:src="@drawable/location" />
+                                android:src="@drawable/ic_location" />
 
                             <TextView
                                 android:id="@+id/muck_Location"
@@ -118,7 +118,7 @@
                             <ImageView
                                 android:layout_width="14dp"
                                 android:layout_height="14dp"
-                                android:src="@drawable/number_people" />
+                                android:src="@drawable/ic_number_people" />
 
                             <TextView
                                 android:id="@+id/muck_TotalMember"
@@ -143,7 +143,7 @@
         android:layout_marginBottom="20dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="#f78025"
-        android:src="@drawable/write"
+        android:src="@drawable/ic_write"
         app:borderWidth="0dp"
         app:fabSize="normal"/>
 </RelativeLayout>

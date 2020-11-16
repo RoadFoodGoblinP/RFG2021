@@ -46,7 +46,7 @@
                     android:layout_height="match_parent">
 
                     <LinearLayout
-                        android:id="@+id/search_AllFeed"
+                        android:id="@+id/feed_AllFeed"
                         android:background="@drawable/feed_border"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -216,9 +216,7 @@
                                 android:layout_height="20dp"/>
                         </LinearLayout>
                     </LinearLayout>
-
                     <LinearLayout
-                        android:id="@+id/search_AllMuckpot"
                         android:background="@drawable/feed_border"
                         android:padding="20dp"
                         android:layout_width="match_parent"
@@ -226,101 +224,101 @@
                         android:gravity="center"
                         android:orientation="horizontal">
 
-                            <!-- 먹팟 썸네일 이미지 -->
-                            <ImageView
-                                android:id="@+id/muck_Img"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/mara" />
+                        <!-- 먹팟 썸네일 이미지 -->
+                        <ImageView
+                            android:id="@+id/muck_Img"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/mara" />
 
-                            <!-- 텍스트 전체 레이아웃 -->
+                        <!-- 텍스트 전체 레이아웃 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:orientation="vertical"
+                            android:paddingTop="5dp">
+
+                            <!-- 제목 라인 레이아웃 -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginBottom="5dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/muck_Title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="7dp"
+                                    android:text="행당동 마라팟"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/muck_Time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="7시간전"
+                                    android:textSize="14dp" />
+                            </LinearLayout>
+
+                            <!-- 내용 미리보기 -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp">
+
+                                <TextView
+                                    android:id="@+id/muck_TextPreview"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="행당동이신 분들 저랑 같이 마라탕 먹어주세요 너무 먹고 싶음 ㅠㅠ!!!!!!!!!!"
+                                    android:textSize="15dp" />
+                            </LinearLayout>
+
+                            <!-- 위치 라인 레이아웃 -->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="15dp"
-                                android:orientation="vertical"
-                                android:paddingTop="5dp">
+                                android:layout_gravity="bottom"
+                                android:layout_marginRight="8dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
 
-                                <!-- 제목 라인 레이아웃 -->
-                                <LinearLayout
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:src="@drawable/location" />
+
+                                <TextView
+                                    android:id="@+id/muck_Location"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="top"
-                                    android:layout_marginBottom="5dp"
-                                    android:orientation="horizontal">
+                                    android:layout_marginLeft="5dp"
+                                    android:text="서울시 성동구 행당동"
+                                    android:textSize="14dp" />
 
-                                    <TextView
-                                        android:id="@+id/muck_Title"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginRight="7dp"
-                                        android:text="행당동 마라팟"
-                                        android:textSize="20dp"
-                                        android:textStyle="bold" />
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="7" />
 
-                                    <TextView
-                                        android:id="@+id/muck_Time"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="7시간전"
-                                        android:textSize="14dp" />
-                                </LinearLayout>
+                                <ImageView
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:src="@drawable/number_people" />
 
-                                <!-- 내용 미리보기 -->
-                                <LinearLayout
+                                <TextView
+                                    android:id="@+id/muck_TotalMember"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="50dp">
-
-                                    <TextView
-                                        android:id="@+id/muck_TextPreview"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="행당동이신 분들 저랑 같이 마라탕 먹어주세요 너무 먹고 싶음 ㅠㅠ!!!!!!!!!!"
-                                        android:textSize="15dp" />
-                                </LinearLayout>
-
-                                <!-- 위치 라인 레이아웃 -->
-                                <LinearLayout
-                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="bottom"
-                                    android:layout_marginRight="8dp"
-                                    android:gravity="center_vertical"
-                                    android:orientation="horizontal">
-
-                                    <ImageView
-                                        android:layout_width="15dp"
-                                        android:layout_height="15dp"
-                                        android:src="@drawable/location" />
-
-                                    <TextView
-                                        android:id="@+id/muck_Location"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="5dp"
-                                        android:text="서울시 성동구 행당동"
-                                        android:textSize="14dp" />
-
-                                    <View
-                                        android:layout_width="0dp"
-                                        android:layout_height="0dp"
-                                        android:layout_weight="7" />
-
-                                    <ImageView
-                                        android:layout_width="14dp"
-                                        android:layout_height="14dp"
-                                        android:src="@drawable/number_people" />
-
-                                    <TextView
-                                        android:id="@+id/muck_TotalMember"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="5dp"
-                                        android:text="1/3"
-                                        android:textSize="14dp" />
-                                </LinearLayout>
+                                    android:layout_marginLeft="5dp"
+                                    android:text="1/3"
+                                    android:textSize="14dp" />
                             </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>
