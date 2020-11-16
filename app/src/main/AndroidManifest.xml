@@ -24,13 +24,11 @@
         <activity android:name=".Map" />
         <activity android:name=".Feed" />
         <activity android:name=".FeedDetail" />
-        <activity android:name=".FeedWrit" />
+        <activity android:name=".FeedWrite" />
         <activity android:name=".MuckpotWrite" />
         <activity android:name=".MuckpotDetail" />
         <activity android:name=".UserProfile" />
         <activity android:name=".UserJoin" />
-        <activity android:name=".FragmentSearchHotfeed" />
-        <activity android:name=".FragmentSearchHotmuck" />
 
         <activity
             android:name=".MainActivity"

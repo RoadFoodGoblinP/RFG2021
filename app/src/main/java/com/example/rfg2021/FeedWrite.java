@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class FeedWrite extends AppCompatActivity {
     private ImageView feedWrite_CloseBtn, feed_write_img;
-    Button post_success, feedWrite_WriteBtn;
+    Button feedWrite_WriteBtn;
 
     private static int PICK_IMAGE_REQUEST = 1;
 
