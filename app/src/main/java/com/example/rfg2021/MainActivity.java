@@ -5,11 +5,19 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,8 +32,13 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.kakao.usermgmt.response.MeV2Response;
+import com.kakao.util.OptionalBoolean;
 
 import java.security.MessageDigest;
 
@@ -40,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawer;
     private NavigationView navigationView;
     private Context context = this;
+
+    // 네비게이션 헤더 요소들
+    public ImageView nav_profileimg, userJoin_profileImg;
+    public TextView kakao_name, kakao_email;
+    public EditText userJoin_info, userJoin_nickname;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -57,6 +75,14 @@ public class MainActivity extends AppCompatActivity {
         drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
+        // 네이게이션 헤더 요소들
+        nav_profileimg = navigationView.getHeaderView(0).findViewById(R.id.nav_profileimg);
+        kakao_name = navigationView.getHeaderView(0).findViewById(R.id.kakao_name);
+        kakao_email = navigationView.getHeaderView(0).findViewById(R.id.kakao_email);
+        userJoin_info = findViewById(R.id.userJoin_info);
+        userJoin_profileImg = findViewById(R.id.userJoin_profileImg);
+        userJoin_nickname = findViewById(R.id.userJoin_nickname);
+
         // 드로어메뉴 관련 기능
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
@@ -65,6 +91,25 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        Intent intent = this.getIntent();
+        String nickname = intent.getExtras().getString("nickname");
+        String profileImgUrl = intent.getExtras().getString("profileImgUrl");
+
+        intent.putExtra("nickname", nickname);
+        intent.putExtra("profileImgUrl", profileImgUrl);
+
+        kakao_name.setText(nickname);
+
+        final View headerView = navigationView.getHeaderView(0);
+        Glide.with(this).load(profileImgUrl).into(new SimpleTarget<Drawable>() {
+            @Override
+            public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    nav_profileimg.setImageDrawable(resource);
+                }
+            }
+        });
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -84,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
                 } else if (id == R.id.nav_slideshow) {
                     Toast.makeText(context, title + ": 로그아웃 시도중", Toast.LENGTH_SHORT).show();
                 }
-
                 return true;
             }
         });
@@ -167,7 +211,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case android.R.id.home: { // 왼쪽 상단 버튼 눌렀을 때
+            case android.R.id.home: {
+                // 왼쪽 상단 버튼 눌렀을 때
                 drawer.openDrawer(GravityCompat.START);
                 return true;
             }
