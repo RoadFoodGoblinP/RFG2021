@@ -6,8 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,10 +24,8 @@ import com.naver.maps.map.util.FusedLocationSource;
 public class Map extends Fragment implements OnMapReadyCallback {
     private static final String TAG = "activity_map";
     private View view;
-    private ImageView map_profileImg;
     private FusedLocationSource mLocationSource;
     private NaverMap mNaverMap;
-    private TextView toolbarText;
     private static final int PERMISSION_REQUEST_CODE = 1000;
     private static final String[] PERMISSIONS = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
 
@@ -37,10 +33,6 @@ public class Map extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.activity_map, container, false);
-        //map_profileImg = view.findViewById(R.id.map_profileImg);
-
-        /*map_profileImg.setBackground(new ShapeDrawable(new OvalShape()));
-        map_profileImg.setClipToOutline(true);*/
 
         // 지도 객체 생성
         FragmentManager fm = getActivity().getSupportFragmentManager();

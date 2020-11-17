@@ -1,12 +1,12 @@
 package com.example.rfg2021;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class FeedDetail extends AppCompatActivity {
     private ImageView feedDetail_BackBtn;

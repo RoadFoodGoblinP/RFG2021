@@ -21,7 +21,7 @@ public class Muckpot extends Fragment {
     private View view;
     private FloatingActionButton muck_WriteBtn;
 
-    ImageView muckImg, muck_Img, muck_profilePic;
+    ImageView muckImg, muck_Img;
     TextView muckTitle, muckTime, muckTextPreview, muckLocation, muckTotalMember;
     LinearLayout muck_list;
 
@@ -39,13 +39,10 @@ public class Muckpot extends Fragment {
         muck_list = view.findViewById(R.id.muck_list);
         muck_WriteBtn = view.findViewById(R.id.muck_WriteBtn);
         muck_Img = view.findViewById(R.id.muck_Img);
-        //muck_profilePic = view.findViewById(R.id.muck_profilePic);
 
         // 먹팟 대표사진 둥글게
         muck_Img.setBackground(new ShapeDrawable(new OvalShape()));
         muck_Img.setClipToOutline(true);
-        //muck_profilePic.setBackground(new ShapeDrawable(new OvalShape()));
-        //muck_profilePic.setClipToOutline(true);
 
         // 하나의 먹팟 화면으로 이동 (Muckpot_Detail)
         muck_list.setOnClickListener(new View.OnClickListener() {

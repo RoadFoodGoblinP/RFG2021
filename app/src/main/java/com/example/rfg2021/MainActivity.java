@@ -6,8 +6,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
@@ -37,8 +35,6 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-import com.kakao.usermgmt.response.MeV2Response;
-import com.kakao.util.OptionalBoolean;
 
 import java.security.MessageDigest;
 
@@ -129,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (id == R.id.nav_slideshow) {
                     Toast.makeText(context, title + ": 로그아웃 시도중", Toast.LENGTH_SHORT).show();
                 }
+
                 return true;
             }
         });
