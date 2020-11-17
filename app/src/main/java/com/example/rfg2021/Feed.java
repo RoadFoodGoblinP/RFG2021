@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Feed extends Fragment {
@@ -40,7 +41,7 @@ public class Feed extends Fragment {
         feed_profileW.setBackground(new ShapeDrawable(new OvalShape()));
         feed_profileW.setClipToOutline(true);
 
-        /*Intent intent = getActivity().getIntent();
+        Intent intent = getActivity().getIntent();
         String nickname = intent.getExtras().getString("nickname");
         String profileImgUrl = intent.getExtras().getString("profileImgUrl");
 
@@ -48,7 +49,7 @@ public class Feed extends Fragment {
         intent.putExtra("profileImgUrl", profileImgUrl);
 
         Glide.with(this).load(profileImgUrl).into(feed_profileW);
-        feed_nicknameW.setText(nickname);*/
+        feed_nicknameW.setText(nickname);
 
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,14 +58,14 @@ public class Feed extends Fragment {
             }
         });
 
-/*        // 회원 프로필 화면으로 이동 (UserProfile)
+        // 회원 프로필 화면으로 이동 (UserProfile)
         feed_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), UserProfile.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
         feed_AllFeed = view.findViewById(R.id.feed_AllFeed);
         feed_WriteBtn = view.findViewById(R.id.feed_WriteBtn);

@@ -5,11 +5,18 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,6 +31,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -40,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawer;
     private NavigationView navigationView;
     private Context context = this;
+    private ImageView header_imageView;
+    private TextView header_nickname;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -66,6 +78,19 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        header_imageView = findViewById(R.id.header_imageView);
+        header_nickname = findViewById(R.id.header_nickname);
+
+        Intent intent = this.getIntent();
+        String nickname = intent.getExtras().getString("nickname");
+        String profileImgUrl = intent.getExtras().getString("profileImgUrl");
+
+        intent.putExtra("nickname", nickname);
+        intent.putExtra("profileImgUrl", profileImgUrl);
+
+        Glide.with(this).load(profileImgUrl).into(header_imageView);
+        header_nickname.setText(nickname);
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -76,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
                 String title = menuItem.getTitle().toString();
 
                 if (id == R.id.nav_home) {
-                    Intent intent = new Intent(MainActivity.this, Setting.class);
-                    startActivity(intent);
+                    Intent intent2 = new Intent(MainActivity.this, Setting.class);
+                    startActivity(intent2);
                     Toast.makeText(context, title + ": 계정 정보를 확인합니다.", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.nav_gallery) {
                     Toast.makeText(context, title + ": 설정 정보를 확인합니다.", Toast.LENGTH_SHORT).show();
