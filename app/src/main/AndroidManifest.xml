@@ -17,8 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RFG2021"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".Setting" />
+        <activity android:name=".Event"></activity>
+        <activity android:name=".BookmarkAll" />
+        <activity android:name=".LikeAll" />
         <activity android:name=".Search" />
         <activity android:name=".Muckpot" />
         <activity android:name=".Map" />
@@ -29,30 +30,23 @@
         <activity android:name=".MuckpotDetail" />
         <activity android:name=".UserProfile" />
         <activity android:name=".UserJoin" />
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.RFG2021.NoActionBar" />
-
         <activity
             android:name=".Index"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- 네이버 API 사용을 위한 클라이언트 ID -->
+        </activity> <!-- 네이버 API 사용을 위한 클라이언트 ID -->
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
-            android:value="yqhn1cw8e9" />
-
-        <!-- 카카오 API 사용을 위한 네이티브 앱 키 -->
+            android:value="yqhn1cw8e9" /> <!-- 카카오 API 사용을 위한 네이티브 앱 키 -->
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="7bf3e2aa9b3bc947b214a31ab6c25d2a" />

@@ -8,18 +8,18 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.rfg2021.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/activity_setting" />
+        android:label="@string/menu_LikeAll"
+        tools:layout="@layout/activity_like_all" />
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.rfg2021.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_BookmarkAll"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.rfg2021.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_Event"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

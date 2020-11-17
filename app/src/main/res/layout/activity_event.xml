@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Setting">
+    tools:context=".Event">
 
     <!--툴바 영역 시작-->
     <androidx.appcompat.widget.Toolbar
@@ -21,7 +20,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <ImageView
-                android:id="@+id/setting_BackBtn"
+                android:id="@+id/event_BackBtn"
                 android:src="@drawable/back"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
@@ -31,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="북마크 모아보기"
+                    android:text="이벤트 및 공지사항"
                     android:textColor="#fff"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -46,10 +45,4 @@
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
     <!--툴바 영역 끝-->
-
-    <TextView
-        android:textSize="50dp"
-        android:text="하이"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+</RelativeLayout>

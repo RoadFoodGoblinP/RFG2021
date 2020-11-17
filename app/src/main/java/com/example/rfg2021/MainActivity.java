@@ -117,13 +117,17 @@ public class MainActivity extends AppCompatActivity {
                 String title = menuItem.getTitle().toString();
 
                 if (id == R.id.nav_home) {
-                    Intent intent = new Intent(MainActivity.this, Setting.class);
+                    Intent intent = new Intent(MainActivity.this, LikeAll.class);
                     startActivity(intent);
-                    Toast.makeText(context, title + ": 계정 정보를 확인합니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, title + " 페이지입니다.", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.nav_gallery) {
-                    Toast.makeText(context, title + ": 설정 정보를 확인합니다.", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, BookmarkAll.class);
+                    startActivity(intent);
+                    Toast.makeText(context, title + " 페이지입니다.", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.nav_slideshow) {
-                    Toast.makeText(context, title + ": 로그아웃 시도중", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, Event.class);
+                    startActivity(intent);
+                    Toast.makeText(context, title + " 페이지입니다.", Toast.LENGTH_SHORT).show();
                 }
 
                 return true;
