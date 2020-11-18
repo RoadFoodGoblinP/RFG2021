@@ -36,9 +36,9 @@ public class UserJoin extends AppCompatActivity {
 
         Intent intent = getIntent();
         int MemberNo = (int) intent.getExtras().getLong("id");
-        String Password = MemberNo + "0";
+        // String Password = MemberNo + "0";
         String Nickname = intent.getExtras().getString("nickname");
-        String Name = intent.getExtras().getString("nickname");
+        // String Name = intent.getExtras().getString("nickname");
         String OneInfo = userJoin_info.getText().toString();
         String ProfileImg = intent.getExtras().getString("profileImgUrl");
 
@@ -59,6 +59,7 @@ public class UserJoin extends AppCompatActivity {
                 Intent intent = new Intent(getApplication(), MainActivity.class);
                 intent.putExtra("nickname", Nickname);
                 intent.putExtra("profileImgUrl", ProfileImg);
+                intent.putExtra("oneInfo", OneInfo);
                 startActivity(intent);
             }
         });

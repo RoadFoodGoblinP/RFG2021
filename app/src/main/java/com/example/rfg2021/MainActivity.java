@@ -1,5 +1,6 @@
 package com.example.rfg2021;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -16,7 +17,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -74,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
         // 네이게이션 헤더 요소들
         nav_profileimg = navigationView.getHeaderView(0).findViewById(R.id.nav_profileimg);
         kakao_name = navigationView.getHeaderView(0).findViewById(R.id.kakao_name);
-        kakao_email = navigationView.getHeaderView(0).findViewById(R.id.kakao_email);
+        // kakao_email = navigationView.getHeaderView(0).findViewById(R.id.kakao_email);
+
         userJoin_info = findViewById(R.id.userJoin_info);
         userJoin_profileImg = findViewById(R.id.userJoin_profileImg);
         userJoin_nickname = findViewById(R.id.userJoin_nickname);
@@ -91,11 +92,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = this.getIntent();
         String nickname = intent.getExtras().getString("nickname");
         String profileImgUrl = intent.getExtras().getString("profileImgUrl");
+        String one_info = intent.getExtras().getString("oneInfo");
 
         intent.putExtra("nickname", nickname);
         intent.putExtra("profileImgUrl", profileImgUrl);
+        intent.putExtra("oneInfo", one_info);
 
         kakao_name.setText(nickname);
+        // kakao_email.setText(one_info);
 
         final View headerView = navigationView.getHeaderView(0);
         Glide.with(this).load(profileImgUrl).into(new SimpleTarget<Drawable>() {
@@ -110,26 +114,22 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                menuItem.setChecked(true);
-                drawer.closeDrawers();
+                // menuItem.setChecked(true);
+                // drawer.closeDrawers();
 
                 int id = menuItem.getItemId();
-                String title = menuItem.getTitle().toString();
+                // String title = menuItem.getTitle().toString();
 
                 if (id == R.id.nav_home) {
                     Intent intent = new Intent(MainActivity.this, LikeAll.class);
                     startActivity(intent);
-                    Toast.makeText(context, title + " 페이지입니다.", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.nav_gallery) {
                     Intent intent = new Intent(MainActivity.this, BookmarkAll.class);
                     startActivity(intent);
-                    Toast.makeText(context, title + " 페이지입니다.", Toast.LENGTH_SHORT).show();
                 } else if (id == R.id.nav_slideshow) {
                     Intent intent = new Intent(MainActivity.this, Event.class);
                     startActivity(intent);
-                    Toast.makeText(context, title + " 페이지입니다.", Toast.LENGTH_SHORT).show();
                 }
-
                 return true;
             }
         });
@@ -211,13 +211,17 @@ public class MainActivity extends AppCompatActivity {
     // 드로어메뉴 페이지이동
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
+        // 왼쪽 상단 버튼 눌렀을 때
+        drawer.openDrawer(GravityCompat.START);
+
+        /*switch (item.getItemId()) {
             case android.R.id.home: {
                 // 왼쪽 상단 버튼 눌렀을 때
                 drawer.openDrawer(GravityCompat.START);
                 return true;
             }
-        }
+        }*/
+
         return super.onOptionsItemSelected(item);
     }
 
