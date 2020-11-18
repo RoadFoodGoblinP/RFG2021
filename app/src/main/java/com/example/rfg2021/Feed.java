@@ -63,34 +63,44 @@ public class Feed extends Fragment {
         feed_likes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (feed_likes == ) {
-                    case R.drawable.likes:
-                        feed_likes.setImageResource(R.drawable.selected_likes2);
-                    case R.drawable.selected_likes2:
-                        feed_likes.setImageResource(R.drawable.likes);
-                }
-                feed_likes.setImageResource(R.drawable.selected_likes2);
+                Integer count = 0;
 
-                feed_likes.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        feed_likes.setImageResource(R.drawable.ic_likes);
-                    }
-                });
+                if (count%2 == 0) {
+                    feed_likes.setImageResource(R.drawable.selected_likes2);
+                    count++;
+                }
+
+                if (count%2 == 1) {
+                    feed_likes.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            feed_likes.setImageResource(R.drawable.ic_likes);
+                        }
+                    });
+                    count++;
+                }
             }
         });
 
         feed_bookmark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                feed_bookmark.setImageResource(R.drawable.selected_bookmark2);
+                Integer count2 = 0;
 
-                feed_bookmark.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        feed_bookmark.setImageResource(R.drawable.bookmark);
-                    }
-                });
+                if (count2%2 == 0) {
+                    feed_bookmark.setImageResource(R.drawable.selected_bookmark2);
+                    count2++;
+                }
+
+                if (count2%2 == 1) {
+                    feed_bookmark.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            feed_bookmark.setImageResource(R.drawable.bookmark);
+                        }
+                    });
+                    count2++;
+                }
             }
         });
 
