@@ -20,7 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Feed extends Fragment {
     private View view;
-    private ImageView feed_profile, feed_profileW;
+    private ImageView feed_profile, feed_profileW, feed_bookmark, feed_likes;
     private TextView feed_nicknameW, refresh;
     private FloatingActionButton feed_WriteBtn;
     private LinearLayout feed_AllFeed, feed_AllFeed2;
@@ -35,6 +35,8 @@ public class Feed extends Fragment {
         feed_nicknameW = view.findViewById(R.id.feed_nicknameW);
         feed_AllFeed2 = view.findViewById(R.id.feed_AllFeed2);
         refresh = view.findViewById(R.id.refresh);
+        feed_bookmark = view.findViewById(R.id.feed_bookmark);
+        feed_likes = view.findViewById(R.id.feed_likes);
 
         feed_profile.setBackground(new ShapeDrawable(new OvalShape()));
         feed_profile.setClipToOutline(true);
@@ -55,6 +57,40 @@ public class Feed extends Fragment {
             @Override
             public void onClick(View view) {
                 feed_AllFeed2.setVisibility(View.VISIBLE);
+            }
+        });
+
+        feed_likes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (feed_likes == ) {
+                    case R.drawable.likes:
+                        feed_likes.setImageResource(R.drawable.selected_likes2);
+                    case R.drawable.selected_likes2:
+                        feed_likes.setImageResource(R.drawable.likes);
+                }
+                feed_likes.setImageResource(R.drawable.selected_likes2);
+
+                feed_likes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        feed_likes.setImageResource(R.drawable.ic_likes);
+                    }
+                });
+            }
+        });
+
+        feed_bookmark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                feed_bookmark.setImageResource(R.drawable.selected_bookmark2);
+
+                feed_bookmark.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        feed_bookmark.setImageResource(R.drawable.bookmark);
+                    }
+                });
             }
         });
 
@@ -90,6 +126,4 @@ public class Feed extends Fragment {
 
         return view;
     }
-
-
 }
