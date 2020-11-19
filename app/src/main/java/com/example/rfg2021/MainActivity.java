@@ -1,12 +1,12 @@
 package com.example.rfg2021;
 
-import android.content.ClipData;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
@@ -48,11 +48,10 @@ public class MainActivity extends AppCompatActivity {
     private Search search_activity;
     private DrawerLayout drawer;
     private NavigationView navigationView;
-    private Context context = this;
 
     // 네비게이션 헤더 요소들
     public ImageView nav_profileimg, userJoin_profileImg;
-    public TextView kakao_name, kakao_email;
+    public TextView kakao_name;
     public EditText userJoin_info, userJoin_nickname;
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -74,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
         // 네이게이션 헤더 요소들
         nav_profileimg = navigationView.getHeaderView(0).findViewById(R.id.nav_profileimg);
         kakao_name = navigationView.getHeaderView(0).findViewById(R.id.kakao_name);
-        // kakao_email = navigationView.getHeaderView(0).findViewById(R.id.kakao_email);
 
         userJoin_info = findViewById(R.id.userJoin_info);
         userJoin_profileImg = findViewById(R.id.userJoin_profileImg);
@@ -99,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("oneInfo", one_info);
 
         kakao_name.setText(nickname);
-        // kakao_email.setText(one_info);
 
         final View headerView = navigationView.getHeaderView(0);
         Glide.with(this).load(profileImgUrl).into(new SimpleTarget<Drawable>() {
@@ -114,11 +111,8 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                // menuItem.setChecked(true);
-                // drawer.closeDrawers();
 
                 int id = menuItem.getItemId();
-                // String title = menuItem.getTitle().toString();
 
                 if (id == R.id.nav_home) {
                     Intent intent = new Intent(MainActivity.this, LikeAll.class);
@@ -213,15 +207,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // 왼쪽 상단 버튼 눌렀을 때
         drawer.openDrawer(GravityCompat.START);
-
-        /*switch (item.getItemId()) {
-            case android.R.id.home: {
-                // 왼쪽 상단 버튼 눌렀을 때
-                drawer.openDrawer(GravityCompat.START);
-                return true;
-            }
-        }*/
-
         return super.onOptionsItemSelected(item);
     }
 

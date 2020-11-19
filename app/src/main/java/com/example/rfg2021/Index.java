@@ -26,7 +26,7 @@ import com.kakao.util.exception.KakaoException;
 
 public class Index extends AppCompatActivity {
 
-    Button Login_home, btn_logout;
+    Button btn_logout;
     private SessionCallback sessionCallback = new SessionCallback();
     private Context context = this;
 
@@ -35,24 +35,15 @@ public class Index extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index);
 
-        Login_home = findViewById(R.id.Login_home);
         btn_logout = findViewById(R.id.btn_logout);
-
-        Login_home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(context, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
                 UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
                     @Override
                     public void onCompleteLogout() {
-                        Toast.makeText(context, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
