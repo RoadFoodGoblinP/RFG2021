@@ -84,7 +84,7 @@
                                 android:id="@+id/muck_TextPreview"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="행당동이신 분들 저랑 같이 마라탕 먹어주세요 너무 먹고 싶음 ㅠㅠ!!!!!!!!!!"
+                                android:text="행당동이신 분들 저랑 같이 마라탕 먹어주세요ㅠㅠ!!!!"
                                 android:textSize="15dp" />
                         </LinearLayout>
 

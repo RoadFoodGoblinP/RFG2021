@@ -13,11 +13,11 @@
             android:title="@string/menu_BookmarkAll" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/event"
             android:title="@string/menu_Event" />
 
         <item
             android:id="@+id/nav_setting"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/settings"
             android:title="@string/menu_Settings" />
 </menu>
