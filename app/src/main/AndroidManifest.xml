@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RFG2021"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Event"></activity>
+        <activity android:name=".SettingAll"></activity>
+        <activity android:name=".Event" />
         <activity android:name=".BookmarkAll" />
         <activity android:name=".LikeAll" />
         <activity android:name=".Search" />

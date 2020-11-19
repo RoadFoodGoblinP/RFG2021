@@ -7,20 +7,13 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_LikeAll">좋아요 모아보기</string>
-    <string name="menu_BookmarkAll">북마크 모아보기</string>
+    <string name="menu_LikeAll">좋아요</string>
+    <string name="menu_BookmarkAll">북마크</string>
     <string name="menu_Event">이벤트 및 공지사항</string>
+    <string name="menu_Settings">설정</string>
     <string name="title_activity_index">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-
-    <string name="title_activity_user_draw">UserDraw</string>
-
-    <string name="menu_Userprofile">Userprofile</string>
-    <string name="menu_Like">Like</string>
-    <string name="menu_Bookmark">Bookmark</string>
-    <string name="menu_Settings">Settings</string>
-    <string name="menu_Events">Events</string>
 
     <string name="kakao_app_key">7bf3e2aa9b3bc947b214a31ab6c25d2a</string>
 
