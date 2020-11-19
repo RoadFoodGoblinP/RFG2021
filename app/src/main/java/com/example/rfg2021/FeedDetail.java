@@ -1,5 +1,6 @@
 package com.example.rfg2021;
 
+import android.content.Intent;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
@@ -25,6 +26,15 @@ public class FeedDetail extends AppCompatActivity {
         feed_profile.setClipToOutline(true);
         feed_profile2.setBackground(new ShapeDrawable(new OvalShape()));
         feed_profile2.setClipToOutline(true);
+
+        // 회원 프로필 화면으로 이동 (UserProfile)
+        feed_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplication(), UserProfile.class);
+                startActivity(intent);
+            }
+        });
 
         // 뒤로가기 버튼
         feedDetail_BackBtn.setOnClickListener(new View.OnClickListener() {

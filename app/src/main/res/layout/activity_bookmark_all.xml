@@ -10,7 +10,7 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#FF9800"
+        android:background="#F78025"
         app:contentInsetStart="10dp">
 
         <LinearLayout
